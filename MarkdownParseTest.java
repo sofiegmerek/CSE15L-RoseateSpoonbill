@@ -65,6 +65,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         ArrayList<String> expected = new ArrayList<>();
+        expected.add("test.com");
         assertEquals(expected, links);
     }
     @Test 
@@ -89,7 +90,6 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         ArrayList<String> expected = new ArrayList<>();
-        expected.add("a link on the first line");
         assertEquals(expected, links);
     }
 
