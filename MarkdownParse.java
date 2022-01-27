@@ -30,6 +30,9 @@ public class MarkdownParse {
                  nextOpenBracket == -1  ) {
                      break;
                  }
+            if(openParen - nextCloseBracket != 1){
+                break;
+            }
            if(markdown.indexOf("!") != nextOpenBracket - 1){
                toReturn.add(markdown.substring(openParen + 1, closeParen));
            }
