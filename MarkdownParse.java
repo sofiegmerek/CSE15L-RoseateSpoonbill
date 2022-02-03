@@ -24,6 +24,7 @@ public class MarkdownParse {
             //if(nextCloseBracket + 1 != openParen){
             //    break;
             //}
+            //hello
             if( nextCloseBracket == -1 ||
                        openParen == -1 ||
                       closeParen == -1 ||
