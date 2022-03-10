@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MarkdownParse {
+public class MarkdownParse2 {
 
     static int findCloseParen(String markdown, int openParen) {
         int closeParen = openParen + 1;

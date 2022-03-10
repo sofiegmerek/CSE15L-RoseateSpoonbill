@@ -13,6 +13,7 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            System.out.println("Next open breacket"+nextOpenBracket);
             //if(markdown.indexOf("!") == nextOpenBracket - 1){
             //    break;
             //}
@@ -27,18 +28,24 @@ public class MarkdownParse {
             //}
             //hello
             //hello 2
+
             if( nextCloseBracket == -1 ||
                        openParen == -1 ||
                       closeParen == -1 ||
                  nextOpenBracket == -1  ) {
                      break;
                  }
-   
+                 System.out.println("after -1");
+            if(nextOpenBracket == 0){
+                if(openParen - nextCloseBracket == 1){
+                    toReturn.add(markdown.substring(openParen + 1, closeParen));
+                }
+            }
            if(markdown.indexOf("!") != nextOpenBracket - 1 &&
             openParen - nextCloseBracket == 1){
+                System.out.println("inside");
                toReturn.add(markdown.substring(openParen + 1, closeParen));
            }
-
             currentIndex = closeParen + 1;
         }
         return toReturn;
@@ -52,3 +59,9 @@ public class MarkdownParse {
 }
 
 //git pull link to pull
+/*
+[link](#fragment)
+
+[link](http://example.com#fragment)
+
+[link](http://example.com?foo=3#frag)/*/
